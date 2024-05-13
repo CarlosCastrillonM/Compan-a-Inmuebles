@@ -86,10 +86,11 @@ public class Pruebita {
                     
                     int id = Integer.parseInt(JOptionPane.showInputDialog("Digite el ID del Inmueble"));
                     int estrato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el estrato"));
-                    int estaAlquilado = JOptionPane.showOptionDialog(null, "El apartamento se encuentra alquilado?", "Esta Alquilado", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcion, "Si");
+                    String tipo = JOptionPane.showInputDialog("Digite el tipo de Inmueble");
+                    int estaAlquilado = JOptionPane.showOptionDialog(null, "El Inmueble se encuentra alquilado?", "Esta Alquilado", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, opcion, "Si");
                     
                     if (estados[estaAlquilado] == true) {
-                        int cedula = Integer.parseInt(JOptionPane.showInputDialog("Digite la Identificacion"));
+                        int cedula = Integer.parseInt(JOptionPane.showInputDialog("Digite la Identificacion del Cliente"));
                         String nombre = JOptionPane.showInputDialog("Digite el Nombre del Dueño del Inmueble");
                         int edad = Integer.parseInt(JOptionPane.showInputDialog("Digite la edad"));
                         String sexo = JOptionPane.showInputDialog("Digite el Sexo");
@@ -97,13 +98,13 @@ public class Pruebita {
                         cliente = new Cliente(cedula, edad, nombre, sexo);
                     }
                     
-                    if (.equalsIgnoreCase("casa")) {
+                    if (tipo.equalsIgnoreCase("casa")) {
                         int numHab = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Numero de Habitaciones"));
                         Casa casa = new Casa(numHab, id, estrato, estados[estaAlquilado], cliente);
                         compa.addInmueble(casa);
 
                     
-                    } else if(.equalsIgnoreCase("apartamento")) {
+                    } else if(tipo.equalsIgnoreCase("apartamento")) {
                         int numPiso = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el Numero del Piso"));
                         Apartamento apartamento = new Apartamento(numPiso, id, estrato, estados[estaAlquilado], cliente);
                         compa.addInmueble(apartamento);
@@ -141,6 +142,11 @@ public class Pruebita {
                 
                 case 6:
                     JOptionPane.showMessageDialog(null, compa.listaDeInmueblesPorCliente());
+                break;
+                
+                case 7:
+                    //buscar
+                    
                 break;
             }
             

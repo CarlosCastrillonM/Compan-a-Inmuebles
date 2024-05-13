@@ -24,6 +24,17 @@ public class Compania {
         inmuebles.add(inmueble);
     }
     
+    public Inmueble buscar(int id) {
+        if (!inmuebles.isEmpty()) {
+            for (int i = 0; i < inmuebles.size(); i++) {
+                if (inmuebles.get(i).getId() == id) {
+                    return inmuebles.get(i);
+                }
+            }
+        }
+        return null;
+    }
+    
     public float buscarValAlquiler(int id) {
         if (!inmuebles.isEmpty()) {
             for (Inmueble inmueble : inmuebles) {
