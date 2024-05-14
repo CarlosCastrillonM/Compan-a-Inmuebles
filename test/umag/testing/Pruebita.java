@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author carla
  */
 public class Pruebita {
-    private static final String MENSAJE_BIENVENIDA = "1. Agregar Inmueble\n2. Valor de Alquiler dado un Codigo\n3. % de Casas con más de 2 Habitaciones\n4. % de Inmuebles no alquilados\n5. Alquiler de Inmueble\n6. Listado de Inmueble por Cliente";
+    private static final String MENSAJE_BIENVENIDA = "1. Agregar Inmueble\n2. Valor de Alquiler dado un Codigo\n3. % de Casas con más de 2 Habitaciones\n4. % de Inmuebles no alquilados\n5. Alquiler de Inmueble\n6. Listado de Inmueble por Cliente\n7. Buscar Inmueble por ID";
     
     public static void main(String[] args) {
         
@@ -146,7 +146,8 @@ public class Pruebita {
                 
                 case 7:
                     //buscar
-                    
+                    id = Integer.parseInt(JOptionPane.showInputDialog("Digite el id del inmueble a buscar"));
+                    JOptionPane.showMessageDialog(null, "El inmueble es:  " + compa.buscar(id));
                 break;
             }
             

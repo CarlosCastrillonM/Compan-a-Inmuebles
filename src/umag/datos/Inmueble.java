@@ -31,7 +31,6 @@ public abstract class Inmueble {
         this.cliente = cliente;
     }
     
-    
     public abstract void valorAlquiler();
     
     
